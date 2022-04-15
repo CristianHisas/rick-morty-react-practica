@@ -126,6 +126,34 @@ body {
   font-size: 15px;
 }
 
+.btn-pagination {
+  display: inline-flex;
+  padding: 2px;
+  margin: 2px;
+  list-style: none;
+}
+
+.page-item{
+  background-color: #1ba94c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgb(27 169 76 / 50%);
+  font-size: 18.005px;
+  padding-left: 1.528em;
+  padding-right: 1.528em;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.page-item:hover, .page-active{
+  background-color: #ffffff;
+  color: #1ba94c;
+}
+
+.page-item a{
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .characters {
     padding: 0 20px;

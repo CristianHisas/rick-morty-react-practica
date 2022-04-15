@@ -1,9 +1,17 @@
-export default function Characters(props) {
+import ReactPaginate from "react-paginate";
+import React from "react";
 
-  const { characters, setCharacters } = props;
+function Characters(props) {
+
+  const { characters, setCharacters, pagination, reqApi } = props;
 
   const ResetCharacters = () => {
     setCharacters(null);
+  }
+
+  const handlePageChange = (data) => {
+    let page = data.selected + 1;
+    reqApi(page);
   }
 
   return (
@@ -38,6 +46,23 @@ export default function Characters(props) {
         ))}
       </div>
       <span className="back-home" onClick={ResetCharacters}>Back to home</span>
+      <div>
+        <ReactPaginate
+          breakLabel = "..."
+          nextLabel = "Next >"
+          previousLabel = "< Previous"
+          pageCount={pagination.pages}
+          onPageChange={handlePageChange}
+          containerClassName={"btn-pagination"}
+          pageClassName={"page-item"}
+          previousClassName={"page-item"}
+          nextClassName={"page-item"}
+          breakClassName={"page-item"}
+          activeClassName={"page-active"}
+        />
+      </div>
     </div>
   )
 }
+
+export default Characters;
