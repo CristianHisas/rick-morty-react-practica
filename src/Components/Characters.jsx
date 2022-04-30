@@ -1,6 +1,6 @@
 import ReactPaginate from "react-paginate";
 import React from "react";
-import getApiRequest from "../Functions/Functions.js";
+import getApiRequest from "../Functions/getApiRequest.js";
 
 function Characters(props) {
 
